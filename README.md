@@ -14,25 +14,25 @@ TaskFlow provides a structured workflow for managing projects and tasks while en
 
 The application combines a Laravel web application with a secured REST API and a responsive bilingual interface.
 
-### Core capabilities
+### Core Capabilities
 
-* Project management
-* Task management
-* Project ownership and membership
-* Task assignment
-* Priorities and due dates
-* Task workflow statuses
-* Role-based authorization
-* Backend-enforced permissions
-* RESTful API
-* Laravel Sanctum authentication
-* API Resources and pagination
-* Request validation
-* Arabic / English localization
-* RTL / LTR interface support
-* Light / Dark mode
-* Responsive SaaS-style UI
-* MySQL relational database
+- Project management
+- Task management
+- Project ownership and membership
+- Task assignment
+- Priorities and due dates
+- Task workflow statuses
+- Role-based authorization
+- Backend-enforced permissions
+- RESTful API
+- Laravel Sanctum authentication
+- API Resources and pagination
+- Request validation
+- Arabic / English localization
+- RTL / LTR interface support
+- Light / Dark mode
+- Responsive SaaS-style UI
+- MySQL relational database
 
 ---
 
@@ -40,26 +40,26 @@ The application combines a Laravel web application with a secured REST API and a
 
 ### Project Management
 
-* Create, view, update, and delete projects according to the user's permissions
-* Assign project ownership
-* Add and remove project members
-* View project members and related tasks
-* Manage project information and status
+- Create, view, update, and delete projects according to user permissions
+- Assign project ownership
+- Add and remove project members
+- View project members and related tasks
+- Manage project information and status
 
 ### Task Management
 
-* Create tasks within projects
-* Assign tasks to permitted project members
-* Set task priority
-* Set due dates
-* Track task workflow
-* Search and filter tasks
+- Create tasks within projects
+- Assign tasks to permitted project members
+- Set task priority
+- Set due dates
+- Track task workflow
+- Search and filter tasks
 
 Available task statuses:
 
-* **To Do**
-* **In Progress**
-* **Completed**
+- **To Do**
+- **In Progress**
+- **Completed**
 
 ### User & Access Control
 
@@ -84,23 +84,23 @@ The general access model is:
 
 ```text
 Admin
- └── Full application access
+└── Full application access
 
 Manager
- └── Project & task management within allowed permissions
+└── Project & task management within allowed permissions
 
 Owner
- └── Own projects
-      ├── Manage project
-      ├── Manage members
-      └── Manage related tasks
+└── Own projects
+    ├── Manage project
+    ├── Manage members
+    └── Manage related tasks
 
 Member
- └── Shared projects
-      └── View permitted project/task data
+└── Shared projects
+    └── View permitted project/task data
 
 Visitor
- └── No protected project/task access
+└── No protected project/task access
 ```
 
 This approach keeps authorization decisions on the server and prevents users from bypassing restrictions through direct URLs or manipulated requests.
@@ -113,9 +113,9 @@ TaskFlow includes a RESTful API protected by **Laravel Sanctum**.
 
 ### API Resources
 
-* Projects
-* Tasks
-* Users
+- Projects
+- Tasks
+- Users
 
 ### Project Endpoints
 
@@ -150,19 +150,19 @@ PATCH   /api/users/{user}
 DELETE  /api/users/{user}
 ```
 
-### API capabilities
+### API Capabilities
 
 The API includes:
 
-* Laravel Sanctum authentication
-* Role-based authorization
-* Request validation
-* Laravel API Resources
-* Pagination
-* Structured JSON responses
-* `401 Unauthenticated` handling
-* `403 Forbidden` handling
-* `404 Resource not found` handling
+- Laravel Sanctum authentication
+- Role-based authorization
+- Request validation
+- Laravel API Resources
+- Pagination
+- Structured JSON responses
+- `401 Unauthenticated` handling
+- `403 Forbidden` handling
+- `404 Resource not found` handling
 
 API routes use dedicated route naming conventions such as:
 
@@ -184,27 +184,27 @@ The main entities are:
 
 ```text
 User
- ├── Owned Projects
- ├── Project Memberships
- └── Assigned Tasks
+├── Owned Projects
+├── Project Memberships
+└── Assigned Tasks
 
 Project
- ├── Owner
- ├── Members
- └── Tasks
+├── Owner
+├── Members
+└── Tasks
 
 Task
- ├── Project
- └── Assigned User
+├── Project
+└── Assigned User
 ```
 
 ### Relationship Model
 
-* A user can own multiple projects.
-* Users can belong to multiple projects through project membership.
-* A project can contain multiple tasks.
-* A task belongs to a project.
-* Tasks can be assigned to users according to the application's permission rules.
+- A user can own multiple projects.
+- Users can belong to multiple projects through project membership.
+- A project can contain multiple tasks.
+- A task belongs to a project.
+- Tasks can be assigned to users according to the application's permission rules.
 
 The relational structure is implemented using **Eloquent models and relationships**, with database changes managed through Laravel migrations.
 
@@ -214,8 +214,8 @@ The relational structure is implemented using **Eloquent models and relationship
 
 TaskFlow supports a bilingual interface:
 
-* **English**
-* **Arabic**
+- **English**
+- **Arabic**
 
 The interface supports both:
 
@@ -232,22 +232,22 @@ Localized content is handled through Laravel's localization system, allowing the
 
 TaskFlow uses a modern SaaS-inspired interface designed around clarity and usability.
 
-### Interface features
+### Interface Features
 
-* Responsive layout
-* Sidebar navigation
-* Dashboard statistics
-* Project cards
-* Task cards
-* Search
-* Status filtering
-* Priority indicators
-* Due-date display
-* Permission-aware actions
-* Arabic RTL layout
-* English LTR layout
-* Light mode
-* Dark mode
+- Responsive layout
+- Sidebar navigation
+- Dashboard statistics
+- Project cards
+- Task cards
+- Search
+- Status filtering
+- Priority indicators
+- Due-date display
+- Permission-aware actions
+- Arabic RTL layout
+- English LTR layout
+- Light mode
+- Dark mode
 
 The UI uses a **glassmorphism-inspired visual language**, with consistent cards, badges, spacing, typography, and responsive layouts.
 
@@ -255,8 +255,8 @@ The UI uses a **glassmorphism-inspired visual language**, with consistent cards,
 
 Users can switch between:
 
-* Light mode
-* Dark mode
+- Light mode
+- Dark mode
 
 The selected theme is persisted in the browser.
 
@@ -266,29 +266,29 @@ The selected theme is persisted in the browser.
 
 ### Backend
 
-* **Laravel 12**
-* **PHP 8.2**
-* **MySQL**
-* **Eloquent ORM**
-* **Laravel Sanctum**
-* **Laravel Breeze**
-* **Blade**
-* **Alpine.js**
+- **Laravel 12**
+- **PHP 8.2**
+- **MySQL**
+- **Eloquent ORM**
+- **Laravel Sanctum**
+- **Laravel Breeze**
+- **Blade**
+- **Alpine.js**
 
 ### Frontend
 
-* **Bootstrap 5**
-* **Bootstrap Icons**
-* **JavaScript**
-* **CSS**
-* **Vite**
+- **Bootstrap 5**
+- **Bootstrap Icons**
+- **JavaScript**
+- **CSS**
+- **Vite**
 
 ### Development & API Tools
 
-* **Git**
-* **GitHub**
-* **VS Code**
-* **Postman**
+- **Git**
+- **GitHub**
+- **VS Code**
+- **Postman**
 
 ---
 
@@ -304,7 +304,7 @@ TaskFlow follows Laravel's MVC architecture while separating responsibilities ac
                                │
                                ▼
                     ┌─────────────────────┐
-                    │       Web Routes    │
+                    │     Web Routes      │
                     └──────────┬──────────┘
                                │
                                ▼
@@ -335,31 +335,31 @@ TaskFlow follows Laravel's MVC architecture while separating responsibilities ac
                            │
                            ▼
                     ┌─────────────────────┐
-                    │   API Routes        │
-                    │   Sanctum Auth      │
+                    │     API Routes      │
+                    │     Sanctum Auth    │
                     └──────────┬──────────┘
                                │
                                ▼
                     ┌─────────────────────┐
-                    │ API Resources       │
-                    │ Validation          │
-                    │ Authorization       │
-                    │ Pagination          │
+                    │   API Resources     │
+                    │   Validation        │
+                    │   Authorization     │
+                    │   Pagination        │
                     └─────────────────────┘
 ```
 
-### Separation of concerns
+### Separation of Concerns
 
 The application keeps the main responsibilities separated:
 
-* **Routes** define application endpoints.
-* **Controllers** handle application flow.
-* **Validation** handles incoming data rules.
-* **Authorization** controls access to protected actions.
-* **Models** represent application entities and relationships.
-* **API Resources** control API response structure.
-* **Blade views** handle the web interface.
-* **Eloquent** manages database interaction.
+- **Routes** define application endpoints.
+- **Controllers** handle application flow.
+- **Validation** handles incoming data rules.
+- **Authorization** controls access to protected actions.
+- **Models** represent application entities and relationships.
+- **API Resources** control API response structure.
+- **Blade views** handle the web interface.
+- **Eloquent** manages database interaction.
 
 ---
 
@@ -386,6 +386,9 @@ resources/
 routes/
 ├── api.php
 └── web.php
+
+docs/
+└── screenshots/
 ```
 
 The structure keeps backend logic organized while allowing the web interface and REST API to use the same underlying domain models and relationships.
@@ -398,32 +401,32 @@ The structure keeps backend logic organized while allowing the web interface and
 
 Make sure the following are installed:
 
-* PHP 8.2+
-* Composer
-* Node.js & npm
-* MySQL
-* Git
+- PHP 8.2+
+- Composer
+- Node.js & npm
+- MySQL
+- Git
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Shimaaatia123/taskflow.git
 cd taskflow
 ```
 
-### 2. Install PHP dependencies
+### 2. Install PHP Dependencies
 
 ```bash
 composer install
 ```
 
-### 3. Install frontend dependencies
+### 3. Install Frontend Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Create the environment file
+### 4. Create the Environment File
 
 ```bash
 cp .env.example .env
@@ -435,13 +438,13 @@ On Windows, you can also copy the file manually:
 .env.example → .env
 ```
 
-### 5. Generate the application key
+### 5. Generate the Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-### 6. Configure the database
+### 6. Configure the Database
 
 Update the database values in `.env`:
 
@@ -457,13 +460,13 @@ Create the corresponding MySQL database, then run:
 php artisan migrate
 ```
 
-### 7. Build frontend assets
+### 7. Build Frontend Assets
 
 ```bash
 npm run build
 ```
 
-### 8. Start the Laravel server
+### 8. Start the Laravel Server
 
 ```bash
 php artisan serve
@@ -481,39 +484,25 @@ npm run dev
 
 ## Screenshots
 
-Screenshots will be maintained in the repository under the project's documentation/assets directory.
-
-Suggested documentation structure:
-
-```text
-docs/
-└── screenshots/
-    ├── landing-page.png
-    ├── dashboard-dark.png
-    ├── dashboard-light.png
-    ├── projects.png
-    └── tasks-ar-light.png
-```
-
 ### Landing Page
 
-<!-- Add screenshot here -->
+![Landing Page](docs/screenshots/landing-page.png)
 
 ### Dashboard — Dark Mode
 
-<!-- Add screenshot here -->
+![Dashboard — Dark Mode](docs/screenshots/dashboard-dark.png)
 
-### Dashboard — Light Mode
+### Projects — Light Mode
 
-<!-- Add screenshot here -->
-
-### Projects
-
-<!-- Add screenshot here -->
+![Projects — Light Mode](docs/screenshots/projects-light.png)
 
 ### Tasks — Arabic / RTL
 
-<!-- Add screenshot here -->
+![Tasks — Arabic / RTL](docs/screenshots/tasks-ar-light.png)
+
+### Users — Arabic / Dark Mode
+
+![Users — Arabic / Dark Mode](docs/screenshots/users-ar-dark.png)
 
 ---
 
@@ -521,21 +510,21 @@ docs/
 
 TaskFlow was built as a practical full-stack project to demonstrate the ability to work across the main layers of a Laravel application:
 
-* Building a Laravel application from scratch
-* Designing relational database structures
-* Working with Eloquent relationships
-* Implementing role-based authorization
-* Enforcing permissions on the backend
-* Building RESTful APIs
-* Securing APIs with Laravel Sanctum
-* Using API Resources
-* Implementing validation
-* Handling API errors
-* Supporting Arabic and English interfaces
-* Building RTL and LTR layouts
-* Creating responsive SaaS-style interfaces
-* Working with Git and GitHub
-* Testing API behavior with Postman
+- Building a Laravel application from scratch
+- Designing relational database structures
+- Working with Eloquent relationships
+- Implementing role-based authorization
+- Enforcing permissions on the backend
+- Building RESTful APIs
+- Securing APIs with Laravel Sanctum
+- Using API Resources
+- Implementing validation
+- Handling API errors
+- Supporting Arabic and English interfaces
+- Building RTL and LTR layouts
+- Creating responsive SaaS-style interfaces
+- Working with Git and GitHub
+- Testing API behavior with Postman
 
 ---
 
@@ -543,10 +532,10 @@ TaskFlow was built as a practical full-stack project to demonstrate the ability 
 
 Potential future enhancements include:
 
-* Task comments
-* Activity history
-* In-app notifications
-* Expanded automated feature and API test coverage
+- Task comments
+- Activity history
+- In-app notifications
+- Expanded automated feature and API test coverage
 
 ---
 
