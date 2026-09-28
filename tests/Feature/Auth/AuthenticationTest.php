@@ -12,16 +12,20 @@ class AuthenticationTest extends TestCase
 
     public function test_login_screen_can_be_rendered(): void
     {
-        $response = $this->get('/login');
+        $this->refreshApplicationWithLocale('en');
+
+        $response = $this->get('/en/login');
 
         $response->assertStatus(200);
     }
 
     public function test_users_can_authenticate_using_the_login_screen(): void
     {
+        $this->refreshApplicationWithLocale('en');
+
         $user = User::factory()->create();
 
-        $response = $this->post('/login', [
+        $response = $this->post('/en/login', [
             'email' => $user->email,
             'password' => 'password',
         ]);
@@ -32,21 +36,26 @@ class AuthenticationTest extends TestCase
 
     public function test_users_can_not_authenticate_with_invalid_password(): void
     {
+        $this->refreshApplicationWithLocale('en');
+
         $user = User::factory()->create();
 
-        $this->post('/login', [
+        $response = $this->post('/en/login', [
             'email' => $user->email,
             'password' => 'wrong-password',
         ]);
 
         $this->assertGuest();
+        $response->assertSessionHasErrors('email');
     }
 
     public function test_users_can_logout(): void
     {
+        $this->refreshApplicationWithLocale('en');
+
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->post('/logout');
+        $response = $this->actingAs($user)->post('/en/logout');
 
         $this->assertGuest();
         $response->assertRedirect('/');
