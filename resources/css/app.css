@@ -286,6 +286,7 @@ Mobile Navigation
 
     --taskflow-bg: #f8fafc;
     --taskflow-surface: #ffffff;
+    --taskflow-surface-soft: #f1f5f9;
 
     --taskflow-sidebar: #0f172a;
     --taskflow-sidebar-soft: #172033;
@@ -3942,4 +3943,544 @@ html[data-theme="dark"] .taskflow-user-edit-cancel:hover {
 
 html[data-theme="dark"] .taskflow-user-edit-submit {
     color: #fff;
+}
+
+/* =========================================================
+   TaskFlow — Profile Page
+   ========================================================= */
+
+.taskflow-profile-page {
+    width: min(980px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 32px 0 56px;
+}
+
+/* ---------- Hero ---------- */
+
+.taskflow-profile-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    padding: 30px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 20px;
+    background: linear-gradient(135deg, #0f172a 0%, #172554 55%, #1e1b4b 100%);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22);
+}
+
+.taskflow-profile-hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.taskflow-profile-hero-glow-one {
+    top: -80px;
+    right: -60px;
+    width: 260px;
+    height: 260px;
+    background: rgba(56, 189, 248, 0.22);
+}
+
+.taskflow-profile-hero-glow-two {
+    bottom: -100px;
+    left: -60px;
+    width: 240px;
+    height: 240px;
+    background: rgba(139, 92, 246, 0.2);
+}
+
+.taskflow-profile-hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.taskflow-profile-avatar {
+    display: flex;
+    width: 84px;
+    height: 84px;
+    flex: 0 0 84px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+    font-size: 34px;
+    font-weight: 750;
+}
+
+.taskflow-profile-hero-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.taskflow-profile-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+    color: #7dd3fc;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.taskflow-profile-page .taskflow-profile-hero-info h1 {
+    margin: 0;
+    overflow: hidden;
+    color: #ffffff;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 750;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.taskflow-profile-page .taskflow-profile-hero-info p {
+    margin: 6px 0 0;
+    overflow: hidden;
+    color: #cbd5e1;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.taskflow-profile-hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 999px;
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.12);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.taskflow-profile-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+}
+
+/* ---------- Cards ---------- */
+
+.taskflow-profile-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.taskflow-profile-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--taskflow-border);
+    border-radius: 18px;
+    background: var(--taskflow-surface);
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.05);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.taskflow-profile-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.taskflow-profile-card-accent {
+    height: 3px;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+}
+
+.taskflow-profile-card-accent.password-accent {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+}
+
+.taskflow-profile-card-accent.danger-accent {
+    background: linear-gradient(90deg, #f87171, #dc2626);
+}
+
+/* ---------- Section heading ---------- */
+
+.taskflow-profile-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px 26px 0;
+}
+
+.taskflow-profile-section-icon {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    font-size: 20px;
+}
+
+.taskflow-profile-section-icon.profile-icon {
+    color: #0284c7;
+    background: rgba(56, 189, 248, 0.14);
+}
+
+.taskflow-profile-section-icon.password-icon {
+    color: #7c3aed;
+    background: rgba(139, 92, 246, 0.14);
+}
+
+.taskflow-profile-section-icon.danger-icon {
+    color: #dc2626;
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.taskflow-profile-section-label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--taskflow-primary-dark);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.taskflow-profile-danger-card .taskflow-profile-section-label {
+    color: #dc2626;
+}
+
+.taskflow-profile-page .taskflow-profile-section-heading h2 {
+    margin: 0;
+    color: var(--taskflow-text);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.taskflow-profile-page .taskflow-profile-section-heading p {
+    margin: 5px 0 0;
+    color: var(--taskflow-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ---------- Card body (يغطي الـ partials القديمة) ---------- */
+
+.taskflow-profile-card-body {
+    padding: 20px 26px 26px;
+    color: var(--taskflow-text);
+}
+
+/* إخفاء العناوين المكررة اللي جوه الـ partials */
+.taskflow-profile-card-body header {
+    display: none;
+}
+
+.taskflow-profile-card-body form {
+    max-width: none;
+    margin-top: 0;
+}
+
+.taskflow-profile-card-body .max-w-xl {
+    max-width: 620px;
+}
+
+.taskflow-profile-card-body form > div + div {
+    margin-top: 18px;
+}
+
+/* Labels: واضحة وغامقة */
+.taskflow-profile-card-body label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--taskflow-text);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Inputs */
+.taskflow-profile-card-body input[type="text"],
+.taskflow-profile-card-body input[type="email"],
+.taskflow-profile-card-body input[type="password"] {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--taskflow-border);
+    border-radius: 10px;
+    outline: none;
+    color: var(--taskflow-text);
+    background: var(--taskflow-surface-soft, #f1f5f9);
+    box-shadow: none;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.taskflow-profile-card-body input:focus {
+    border-color: var(--taskflow-primary);
+    background: var(--taskflow-surface);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.taskflow-profile-card-body input::placeholder {
+    color: var(--taskflow-muted);
+    opacity: 0.7;
+}
+
+/* نصوص مساعدة ورسائل (Saved. / تحذيرات) */
+.taskflow-profile-card-body p {
+    color: var(--taskflow-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.taskflow-profile-card-body ul {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+    color: #dc2626;
+    font-size: 12px;
+}
+
+.taskflow-profile-card-body .flex.items-center.gap-4 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+/* ---------- Buttons ---------- */
+
+.taskflow-profile-card-body button {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 20px;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    background: var(--taskflow-primary-dark);
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.22);
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.taskflow-profile-card-body button:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(2, 132, 199, 0.3);
+}
+
+/* Danger */
+.taskflow-profile-card-body button[class*="bg-red"] {
+    background: #dc2626;
+    box-shadow: 0 8px 18px rgba(220, 38, 38, 0.25);
+}
+
+.taskflow-profile-card-body button[class*="bg-red"]:hover {
+    background: #b91c1c;
+}
+
+
+
+/* ---------- Modal (Delete account) يتبع الثيم ---------- */
+
+.taskflow-profile-card-body div.bg-white {
+    color: var(--taskflow-text);
+    background: var(--taskflow-surface);
+    border: 1px solid var(--taskflow-border);
+    border-radius: 16px;
+}
+
+.taskflow-profile-card-body div.bg-white h2 {
+    color: var(--taskflow-text);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ---------- Danger card ---------- */
+
+.taskflow-profile-danger-card {
+    border-color: rgba(239, 68, 68, 0.28);
+    background: linear-gradient(180deg, rgba(239, 68, 68, 0.04), var(--taskflow-surface) 60%);
+}
+
+.taskflow-profile-danger-card:hover {
+    border-color: rgba(239, 68, 68, 0.45);
+}
+
+/* ---------- Dark ---------- */
+
+html[data-theme="dark"] .taskflow-profile-card {
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .taskflow-profile-section-icon.profile-icon {
+    color: #7dd3fc;
+}
+
+html[data-theme="dark"] .taskflow-profile-section-icon.password-icon {
+    color: #c4b5fd;
+}
+
+html[data-theme="dark"] .taskflow-profile-section-icon.danger-icon {
+    color: #fca5a5;
+}
+
+html[data-theme="dark"] .taskflow-profile-danger-card .taskflow-profile-section-label {
+    color: #fca5a5;
+}
+
+/* ---------- RTL ---------- */
+
+html[dir="rtl"] .taskflow-profile-card-body button {
+    letter-spacing: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 767.98px) {
+    .taskflow-profile-page {
+        width: min(100% - 24px, 680px);
+        padding-top: 24px;
+    }
+
+    .taskflow-profile-hero {
+        padding: 22px 18px;
+    }
+
+    .taskflow-profile-hero-content {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .taskflow-profile-avatar {
+        width: 68px;
+        height: 68px;
+        flex-basis: 68px;
+        font-size: 27px;
+    }
+
+    .taskflow-profile-hero-status {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .taskflow-profile-section-heading {
+        padding: 18px 18px 0;
+    }
+
+    .taskflow-profile-card-body {
+        padding: 16px 18px 20px;
+    }
+
+    .taskflow-profile-card-body button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   TaskFlow — Shared Buttons (Breeze components)
+   ========================================================= */
+
+.taskflow-btn-primary,
+.taskflow-btn-secondary {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 20px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.taskflow-btn-primary {
+    border: 0;
+    color: #ffffff;
+    background: var(--taskflow-primary-dark);
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.22);
+}
+
+.taskflow-btn-primary:hover {
+    color: #ffffff;
+    background: var(--taskflow-primary);
+    transform: translateY(-1px);
+}
+
+.taskflow-btn-secondary {
+    color: var(--taskflow-text);
+    background: var(--taskflow-surface-soft);
+    border: 1px solid var(--taskflow-border);
+    box-shadow: none;
+}
+
+.taskflow-btn-secondary:hover {
+    border-color: var(--taskflow-primary);
+    color: var(--taskflow-primary-dark);
+}
+
+.taskflow-btn-primary:focus-visible,
+.taskflow-btn-secondary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+}
+
+/* الزرار العام داخل كروت الـ Profile ما يكتبش فوق الأزرار الجاهزة */
+.taskflow-profile-card-body .taskflow-btn-primary,
+.taskflow-profile-card-body .taskflow-btn-secondary {
+    letter-spacing: 0.6px;
+}
+
+.taskflow-profile-card-body .taskflow-btn-secondary {
+    color: var(--taskflow-text);
+    background: var(--taskflow-surface-soft);
+    border: 1px solid var(--taskflow-border);
+    box-shadow: none;
+}
+
+.taskflow-profile-card-body .taskflow-btn-primary:hover {
+    background: var(--taskflow-primary);
+}
+
+/* Profile — Dark: الـ modal وأي عنصر Tailwind أبيض */
+html[data-theme="dark"] .taskflow-profile-card-body div.bg-white,
+html[data-theme="dark"] .taskflow-profile-card-body .dark\:bg-gray-800 {
+    background: var(--taskflow-surface);
+    color: var(--taskflow-text);
+}
+
+html[data-theme="dark"] .taskflow-profile-card-body input[type="text"],
+html[data-theme="dark"] .taskflow-profile-card-body input[type="email"],
+html[data-theme="dark"] .taskflow-profile-card-body input[type="password"] {
+    background: var(--taskflow-surface-soft);
+    color: var(--taskflow-text);
+}
+
+/* يوقف الـ transitions لحظة تبديل الثيم عشان التحويل يبقى فوري */
+html.taskflow-theme-switching,
+html.taskflow-theme-switching *,
+html.taskflow-theme-switching *::before,
+html.taskflow-theme-switching *::after {
+    transition: none !important;
 }

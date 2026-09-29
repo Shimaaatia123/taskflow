@@ -61,7 +61,8 @@
 
 
             <!-- Tasks -->
-            <span class="taskflow-sidebar-link disabled">
+            <a href="{{ LaravelLocalization::localizeUrl('/tasks') }}"
+                class="taskflow-sidebar-link {{ request()->routeIs('tasks.*') ? 'active' : '' }}">
 
                 <span class="taskflow-sidebar-icon">
                     <i class="bi bi-list-check"></i>
@@ -71,8 +72,25 @@
                     {{ app()->getLocale() === 'ar' ? 'المهام' : 'Tasks' }}
                 </span>
 
-            </span>
+            </a>
 
+            @auth
+                @if (auth()->user()->role === 'admin')
+                    <!-- Users -->
+                    <a href="{{ LaravelLocalization::localizeUrl('/users') }}"
+                        class="taskflow-sidebar-link {{ request()->routeIs('users.*') ? 'active' : '' }}">
+
+                        <span class="taskflow-sidebar-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </span>
+
+                        <span>
+                            {{ app()->getLocale() === 'ar' ? 'المستخدمون' : 'Users' }}
+                        </span>
+
+                    </a>
+                @endif
+            @endauth
         </div>
 
 
@@ -319,33 +337,23 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        /* =====================================================
-           Sidebar
-           ===================================================== */
+    document.addEventListener('DOMContentLoaded', function () {
 
         const sidebar = document.getElementById('taskflowSidebar');
         const toggle = document.getElementById('taskflowSidebarToggle');
         const overlay = document.getElementById('taskflowSidebarOverlay');
 
         if (sidebar && toggle && overlay) {
-
-            toggle.addEventListener('click', function() {
+            toggle.addEventListener('click', function () {
                 sidebar.classList.toggle('show');
                 overlay.classList.toggle('show');
             });
 
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 sidebar.classList.remove('show');
                 overlay.classList.remove('show');
             });
         }
-
-
-        /* =====================================================
-           Theme Toggle
-           ===================================================== */
 
         const themeToggle = document.getElementById('taskflowThemeToggle');
         const themeIcon = document.getElementById('taskflowThemeIcon');
@@ -356,58 +364,46 @@
         }
 
         function applyTheme(theme) {
-
             document.documentElement.setAttribute('data-theme', theme);
 
             const isDark = theme === 'dark';
-
-            themeIcon.className = isDark ?
-                'bi bi-sun-fill' :
-                'bi bi-moon-stars-fill';
-
             const isArabic = document.documentElement.lang === 'ar';
 
-            themeToggle.setAttribute(
-                'aria-label',
-                isArabic ?
-                (isDark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الداكن') :
-                (isDark ? 'Switch to light mode' : 'Switch to dark mode')
-            );
+            themeIcon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
 
-            themeToggle.setAttribute(
-                'title',
-                isArabic ?
-                (isDark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الداكن') :
-                (isDark ? 'Switch to light mode' : 'Switch to dark mode')
-            );
+            const label = isArabic
+                ? (isDark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الداكن')
+                : (isDark ? 'Switch to light mode' : 'Switch to dark mode');
+
+            themeToggle.setAttribute('aria-label', label);
+            themeToggle.setAttribute('title', label);
 
             if (themeText) {
-                themeText.textContent = isArabic ?
-                    (isDark ? 'الوضع الفاتح' : 'الوضع الداكن') :
-                    (isDark ? 'Light Mode' : 'Dark Mode');
+                themeText.textContent = isArabic
+                    ? (isDark ? 'الوضع الفاتح' : 'الوضع الداكن')
+                    : (isDark ? 'Light Mode' : 'Dark Mode');
             }
         }
 
-
         const savedTheme = localStorage.getItem('taskflow-theme');
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
 
-        const initialTheme =
-            savedTheme === 'dark' ? 'dark' : 'light';
+        themeToggle.addEventListener('click', function () {
+            const root = document.documentElement;
+            const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
 
-        applyTheme(initialTheme);
-
-
-        themeToggle.addEventListener('click', function() {
-
-            const currentTheme =
-                document.documentElement.getAttribute('data-theme');
-
-            const newTheme =
-                currentTheme === 'dark' ? 'light' : 'dark';
+            root.classList.add('taskflow-theme-switching');
 
             localStorage.setItem('taskflow-theme', newTheme);
-
             applyTheme(newTheme);
+
+            void root.offsetHeight;
+
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    root.classList.remove('taskflow-theme-switching');
+                });
+            });
         });
 
     });
