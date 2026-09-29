@@ -851,8 +851,9 @@
 
             margin: 0 auto;
 
+
             padding:
-                190px 0 105px;
+                140px 0 105px;
 
             display: grid;
 

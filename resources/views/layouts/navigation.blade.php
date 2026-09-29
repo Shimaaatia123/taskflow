@@ -337,19 +337,19 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
 
         const sidebar = document.getElementById('taskflowSidebar');
         const toggle = document.getElementById('taskflowSidebarToggle');
         const overlay = document.getElementById('taskflowSidebarOverlay');
 
         if (sidebar && toggle && overlay) {
-            toggle.addEventListener('click', function () {
+            toggle.addEventListener('click', function() {
                 sidebar.classList.toggle('show');
                 overlay.classList.toggle('show');
             });
 
-            overlay.addEventListener('click', function () {
+            overlay.addEventListener('click', function() {
                 sidebar.classList.remove('show');
                 overlay.classList.remove('show');
             });
@@ -371,24 +371,24 @@
 
             themeIcon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
 
-            const label = isArabic
-                ? (isDark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الداكن')
-                : (isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            const label = isArabic ?
+                (isDark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الداكن') :
+                (isDark ? 'Switch to light mode' : 'Switch to dark mode');
 
             themeToggle.setAttribute('aria-label', label);
             themeToggle.setAttribute('title', label);
 
             if (themeText) {
-                themeText.textContent = isArabic
-                    ? (isDark ? 'الوضع الفاتح' : 'الوضع الداكن')
-                    : (isDark ? 'Light Mode' : 'Dark Mode');
+                themeText.textContent = isArabic ?
+                    (isDark ? 'الوضع الفاتح' : 'الوضع الداكن') :
+                    (isDark ? 'Light Mode' : 'Dark Mode');
             }
         }
 
         const savedTheme = localStorage.getItem('taskflow-theme');
         applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
 
-        themeToggle.addEventListener('click', function () {
+        themeToggle.addEventListener('click', function() {
             const root = document.documentElement;
             const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
 
@@ -399,8 +399,8 @@
 
             void root.offsetHeight;
 
-            requestAnimationFrame(function () {
-                requestAnimationFrame(function () {
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
                     root.classList.remove('taskflow-theme-switching');
                 });
             });

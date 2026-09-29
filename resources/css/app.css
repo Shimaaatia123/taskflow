@@ -4484,3 +4484,22 @@ html.taskflow-theme-switching *::before,
 html.taskflow-theme-switching *::after {
     transition: none !important;
 }
+
+/* Landing navbar: يغلب القاعدة العامة .taskflow-nav-link بتاعة app.css */
+.taskflow-public-nav .taskflow-nav-link {
+    color: #e2e8f0 !important;
+}
+
+.taskflow-public-nav .taskflow-nav-link:hover,
+.taskflow-public-nav .taskflow-nav-link.is-active {
+    color: #ffffff !important;
+}
+
+.taskflow-public-nav .taskflow-nav-link.taskflow-nav-dashboard,
+.taskflow-public-nav .taskflow-nav-link.taskflow-nav-cta {
+    color: #ffffff !important;
+}
+
+.taskflow-public-nav .taskflow-nav-link.taskflow-nav-lang {
+    color: #7dd3fc !important;
+}
