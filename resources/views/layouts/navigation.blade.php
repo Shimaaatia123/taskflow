@@ -46,7 +46,8 @@
 
 
             <!-- Projects -->
-            <span class="taskflow-sidebar-link disabled">
+            <a href="{{ LaravelLocalization::localizeUrl('/projects') }}"
+                class="taskflow-sidebar-link {{ request()->routeIs('projects.*') ? 'active' : '' }}">
 
                 <span class="taskflow-sidebar-icon">
                     <i class="bi bi-kanban-fill"></i>
@@ -56,7 +57,7 @@
                     {{ app()->getLocale() === 'ar' ? 'المشروعات' : 'Projects' }}
                 </span>
 
-            </span>
+            </a>
 
 
             <!-- Tasks -->
