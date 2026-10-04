@@ -15,6 +15,15 @@
             ? 'TaskFlow يساعدك على تنظيم المشاريع والمهام والفريق في مساحة عمل واحدة.'
             : 'TaskFlow helps you organize projects, tasks, and teams in one focused workspace.' }}">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TaskFlow — Project & Task Management">
+    <meta property="og:description" content="Full-stack project and task management platform built with Laravel.">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:image" content="{{ asset('images/og-taskflow.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
