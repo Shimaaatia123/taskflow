@@ -1,12 +1,17 @@
-<?php
+<?php 
+ 
+use App\Http\Controllers\DashboardController; 
+use App\Http\Controllers\ProfileController; 
+use App\Http\Controllers\UserController; 
+use App\Http\Controllers\ProjectController; 
+use App\Http\Controllers\TaskController; 
+use Illuminate\Support\Facades\Route; 
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization; 
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\TaskController;
-use Illuminate\Support\Facades\Route;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+Route::get('/en', function () {
+    app()->setLocale('en');
+    return view('welcome');
+});
 
 Route::group(
     [
