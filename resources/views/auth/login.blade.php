@@ -177,7 +177,7 @@
                     FORM
                 ================================================== --}}
 
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route(app()->getLocale() . '.login.store') }}">
                     @csrf
 
                     {{-- Email --}}
@@ -191,8 +191,7 @@
 
                         <div class="group relative">
 
-                            <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
-                                <svg class="h-[18px] w-[18px] text-slate-500 transition duration-200 group-focus-within:text-cyan-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center pl-3.5">                                <svg class="h-[18px] w-[18px] text-slate-500 transition duration-200 group-focus-within:text-cyan-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Z" stroke="currentColor" stroke-width="1.7" />
                                     <path d="m5 7 6.15 4.4a1.5 1.5 0 0 0 1.7 0L19 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -209,7 +208,7 @@
                                 inputmode="email"
                                 spellcheck="false"
                                 class="block w-full rounded-xl border border-white/10 bg-slate-950/60
-                                       py-3 ps-11 pe-4 text-sm text-white placeholder-slate-600
+                                       py-3 pl-11 pe-4 text-sm text-white placeholder-slate-600
                                        outline-none transition duration-200 hover:border-white/15
                                        focus:border-cyan-400/50 focus:bg-slate-950/80 focus:ring-4 focus:ring-cyan-400/10"
                                 placeholder="{{ __('Enter your email') }}"
@@ -242,7 +241,7 @@
 
                         <div class="group relative">
 
-                            <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+                            <div class="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center pl-3.5">
                                 <svg class="h-[18px] w-[18px] text-slate-500 transition duration-200 group-focus-within:text-cyan-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7" />
                                     <path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
@@ -253,24 +252,26 @@
                                 id="password"
                                 name="password"
                                 type="password"
+                                dir="ltr"
+lang="en"
                                 required
                                 autocomplete="current-password"
                                 class="block w-full rounded-xl border border-white/10 bg-slate-950/60
-                                       py-3 ps-11 pe-11 text-sm text-white placeholder-slate-600
-                                       outline-none transition duration-200 hover:border-white/15
-                                       focus:border-cyan-400/50 focus:bg-slate-950/80 focus:ring-4 focus:ring-cyan-400/10"
+       py-3 pl-11 pr-11 text-sm text-white placeholder-slate-600
+       outline-none transition duration-200 hover:border-white/15
+       focus:border-cyan-400/50 focus:bg-slate-950/80 focus:ring-4 focus:ring-cyan-400/10"
                                 placeholder="{{ __('Enter your password') }}"
                             />
 
                             <button
-                                type="button"
-                                id="togglePassword"
-                                class="absolute inset-y-0 end-0 flex items-center pe-3.5 text-slate-500
-                                       transition hover:text-cyan-300 focus:outline-none focus:ring-2
-                                       focus:ring-cyan-400/40 rounded-e-xl"
-                                aria-label="{{ __('Show password') }}"
-                                aria-pressed="false"
-                            >
+    type="button"
+    id="togglePassword"
+    class="absolute inset-y-0 right-0 z-10 flex items-center pr-3.5 text-slate-500
+           transition hover:text-cyan-300 focus:outline-none focus:ring-2
+           focus:ring-cyan-400/40 rounded-e-xl"
+    aria-label="{{ __('Show password') }}"
+    aria-pressed="false"
+>
                                 <svg id="eyeIcon" class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" stroke="currentColor" stroke-width="1.7" />
                                     <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7" />
