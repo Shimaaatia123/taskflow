@@ -219,7 +219,7 @@
                     {{-- Back to login --}}
                     <div class="tf-forgot-back">
 
-                        <a href="{{ route('login') }}" class="tf-forgot-back-link">
+                        <a href="{{ route(app()->getLocale() . '.login') }}" class="tf-forgot-back-link">
 
                             <svg viewBox="0 0 24 24"
                                  fill="none"

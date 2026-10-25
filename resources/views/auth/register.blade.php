@@ -132,7 +132,7 @@
                         {{-- Form --}}
                         <form
                             method="POST"
-                            action="{{ route('register') }}"
+                            action="{{ route(app()->getLocale() . '.register.store') }}"
                             class="tf-register-form"
                         >
                             @csrf
@@ -295,7 +295,7 @@
                             <div class="tf-register-actions">
 
                                 <a
-                                    href="{{ route('login') }}"
+                                    href="{{ route(app()->getLocale() . '.login') }}"
                                     class="tf-register-login-link"
                                 >
                                     <i class="bi bi-arrow-left"></i>

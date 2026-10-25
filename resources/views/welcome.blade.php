@@ -2988,11 +2988,11 @@
                             {{ $isArabic ? 'لوحة التحكم' : 'Dashboard' }}
                         </a>
                     @else
-                        <a href="{{ route('login') }}" class="taskflow-nav-link taskflow-nav-login">
+                        <a href="{{ route(app()->getLocale() . '.login') }}" class="taskflow-nav-link taskflow-nav-login">
                             {{ $isArabic ? 'دخول' : 'Login' }}
                         </a>
 
-                        <a href="{{ route('register') }}" class="taskflow-nav-link taskflow-nav-cta">
+                        <a href="{{ route(app()->getLocale() . '.register') }}" class="taskflow-nav-link taskflow-nav-cta">
                             {{ $isArabic ? 'ابدأ الآن' : 'Get Started' }}
                         </a>
 
@@ -3028,11 +3028,11 @@
                         {{ $isArabic ? 'لوحة التحكم' : 'Dashboard' }}
                     </a>
                 @else
-                    <a href="{{ route('login') }}">
+                    <a href="{{ route(app()->getLocale() . '.login') }}">
                         {{ $isArabic ? 'تسجيل الدخول' : 'Login' }}
                     </a>
 
-                    <a href="{{ route('register') }}">
+                    <a href="{{ route(app()->getLocale() . '.register') }}">
                         {{ $isArabic ? 'إنشاء حساب' : 'Get Started' }}
                     </a>
 
@@ -3092,7 +3092,7 @@
                             {{ $isArabic ? 'اكتشف المميزات' : 'Explore Features' }}
                         </a>
                     @else
-                        <a href="{{ route('register') }}" class="taskflow-primary-btn">
+                        <a href="{{ route(app()->getLocale() . '.register') }}" class="taskflow-primary-btn">
                             <i class="bi bi-arrow-up-right-circle-fill"></i>
                             {{ $isArabic ? 'ابدأ مع TaskFlow' : 'Start with TaskFlow' }}
                         </a>
@@ -3604,7 +3604,7 @@
                                 {{ $isArabic ? 'فتح لوحة التحكم' : 'Open Dashboard' }}
                             </a>
                         @else
-                            <a href="{{ route('register') }}" class="taskflow-primary-btn">
+                            <a href="{{ route(app()->getLocale() . '.register') }}" class="taskflow-primary-btn">
                                 <i class="bi bi-arrow-up-right-circle-fill"></i>
                                 {{ $isArabic ? 'ابدأ الآن' : 'Get Started' }}
                             </a>

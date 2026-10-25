@@ -1,0 +1,102 @@
+﻿D:\laravel\taskflow\app\Http\Controllers\Auth\AuthenticatedSessionController.php:31: return redirect()->intended(
+D:\laravel\taskflow\app\Http\Controllers\Auth\AuthenticatedSessionController.php:32: route(app()->getLocale() . '.dashboard', absolute: false)
+D:\laravel\taskflow\app\Http\Controllers\Auth\ConfirmablePasswordController.php:38: return redirect()->intended(route('dashboard', absolute: false));
+D:\laravel\taskflow\app\Http\Controllers\Auth\EmailVerificationNotificationController.php:17: return redirect()->intended(route('dashboard', absolute: false));
+D:\laravel\taskflow\app\Http\Controllers\Auth\EmailVerificationPromptController.php:18: ? redirect()->intended(route('dashboard', absolute: false))
+D:\laravel\taskflow\app\Http\Controllers\Auth\NewPasswordController.php:59: ? redirect()->route(app()->getLocale() . '.login')->with('status', __($status))
+D:\laravel\taskflow\app\Http\Controllers\Auth\RegisteredUserController.php:49: return redirect(route('dashboard', absolute: false));
+D:\laravel\taskflow\app\Http\Controllers\Auth\VerifyEmailController.php:18: return redirect()->intended(route('dashboard', absolute: false).'?verified=1');
+D:\laravel\taskflow\app\Http\Controllers\Auth\VerifyEmailController.php:25: return redirect()->intended(route('dashboard', absolute: false).'?verified=1');
+D:\laravel\taskflow\app\Http\Controllers\ProfileController.php:37: return Redirect::route('profile.edit')->with('status', 'profile-updated');
+D:\laravel\taskflow\app\Http\Controllers\ProjectController.php:67: ->route('projects.index')
+D:\laravel\taskflow\app\Http\Controllers\ProjectController.php:121: ->route('projects.index')
+D:\laravel\taskflow\app\Http\Controllers\ProjectController.php:138: ->route('projects.index')
+D:\laravel\taskflow\app\Http\Controllers\ProjectController.php:158: ->route('projects.index')
+D:\laravel\taskflow\app\Http\Controllers\ProjectController.php:172: ->route('projects.index')
+D:\laravel\taskflow\app\Http\Controllers\TaskController.php:103: ->route('tasks.index')
+D:\laravel\taskflow\app\Http\Controllers\TaskController.php:195: ->route('tasks.index')
+D:\laravel\taskflow\app\Http\Controllers\TaskController.php:215: ->route('tasks.index')
+D:\laravel\taskflow\app\Http\Controllers\UserController.php:49: ->route('users.index')
+D:\laravel\taskflow\app\Http\Controllers\UserController.php:95: ->route('users.index')
+D:\laravel\taskflow\app\Http\Controllers\UserController.php:108: ->route('users.index')
+D:\laravel\taskflow\app\Http\Controllers\UserController.php:114: ->route('users.index')
+D:\laravel\taskflow\app\Http\Controllers\UserController.php:121: ->route('users.index')
+D:\laravel\taskflow\resources\views\auth\confirm-password.blade.php:115: action="{{ route('password.confirm') }}"
+D:\laravel\taskflow\resources\views\auth\forgot-password.blade.php:130: action="{{ route(app()->getLocale() . '.password.email') }}"
+D:\laravel\taskflow\resources\views\auth\forgot-password.blade.php:222: <a href="{{ route(app()->getLocale() . '.login') }}" class="tf-forgot-back-link">
+D:\laravel\taskflow\resources\views\auth\login.blade.php:180: <form method="POST" action="{{ route(app()->getLocale() . '.login.store') }}">
+D:\laravel\taskflow\resources\views\auth\login.blade.php:231: @if (Route::has('password.request'))
+D:\laravel\taskflow\resources\views\auth\login.blade.php:233: href="{{ route(app()->getLocale() . '.password.request') }}"
+D:\laravel\taskflow\resources\views\auth\register.blade.php:135: action="{{ route(app()->getLocale() . '.login') }}"
+D:\laravel\taskflow\resources\views\auth\register.blade.php:298: href="{{ route(app()->getLocale() . '.login') }}"
+D:\laravel\taskflow\resources\views\auth\reset-password.blade.php:202: <form method="POST" action="{{ route('password.store') }}" id="resetPasswordForm">
+D:\laravel\taskflow\resources\views\auth\reset-password.blade.php:206: <input type="hidden" name="token" value="{{ $request->route('token') }}">
+D:\laravel\taskflow\resources\views\auth\verify-email.blade.php:194: action="{{ route('verification.send') }}"
+D:\laravel\taskflow\resources\views\auth\verify-email.blade.php:267: action="{{ route('logout') }}">
+D:\laravel\taskflow\resources\views\profile\partials\delete-user-form.blade.php:18: <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
+D:\laravel\taskflow\resources\views\profile\partials\update-password-form.blade.php:12: <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+D:\laravel\taskflow\resources\views\profile\partials\update-profile-information-form.blade.php:12: <form id="send-verification" method="post" action="{{ route(app()->getLocale() . '.verification.send') }}">        @csrf
+D:\laravel\taskflow\resources\views\profile\partials\update-profile-information-form.blade.php:15: <form method="post" action="{{ route(app()->getLocale() . '.profile.update') }}" class="mt-6 space-y-6">        @csrf
+D:\laravel\taskflow\resources\views\projects\create.blade.php:25: href="{{ route('projects.index') }}"
+D:\laravel\taskflow\resources\views\projects\create.blade.php:62: action="{{ route('projects.store') }}"
+D:\laravel\taskflow\resources\views\projects\create.blade.php:156: href="{{ route('projects.index') }}"
+D:\laravel\taskflow\resources\views\projects\edit.blade.php:25: href="{{ route('projects.show', $project) }}"
+D:\laravel\taskflow\resources\views\projects\edit.blade.php:63: action="{{ route('projects.update', $project) }}"
+D:\laravel\taskflow\resources\views\projects\edit.blade.php:157: href="{{ route('projects.show', $project) }}"
+D:\laravel\taskflow\resources\views\projects\index.blade.php:79: <a href="{{ route(app()->getLocale() . '.projects.create') }}" class="taskflow-projects-create-btn">
+D:\laravel\taskflow\resources\views\projects\index.blade.php:336: <a href="{{ route('projects.show', $project) }}" class="taskflow-project-view-btn">
+D:\laravel\taskflow\resources\views\projects\index.blade.php:350: <a href="{{ route('projects.edit', $project) }}" class="taskflow-project-icon-btn"
+D:\laravel\taskflow\resources\views\projects\index.blade.php:358: <form method="POST" action="{{ route('projects.destroy', $project) }}"
+D:\laravel\taskflow\resources\views\projects\index.blade.php:427: <a href="{{ route('projects.create') }}" class="taskflow-projects-empty-btn">
+D:\laravel\taskflow\resources\views\projects\show.blade.php:10: <a href="{{ route('projects.index') }}" class="taskflow-project-back">
+D:\laravel\taskflow\resources\views\projects\show.blade.php:51: <a href="{{ route('projects.edit', $project) }}" class="taskflow-project-action-btn">
+D:\laravel\taskflow\resources\views\projects\show.blade.php:58: <form method="POST" action="{{ route('projects.destroy', $project) }}"
+D:\laravel\taskflow\resources\views\projects\show.blade.php:318: <a href="{{ route('tasks.create') }}?project_id={{ $project->id }}"
+D:\laravel\taskflow\resources\views\projects\show.blade.php:381: <form method="POST" action="{{ route('projects.members.add', $project) }}"
+D:\laravel\taskflow\resources\views\projects\show.blade.php:466: <form method="POST" action="{{ route('projects.members.remove', [$project, $user]) }}"
+D:\laravel\taskflow\resources\views\tasks\create.blade.php:24: <a href="{{ route('tasks.index') }}" class="taskflow-task-form-back">
+D:\laravel\taskflow\resources\views\tasks\create.blade.php:58: <form method="POST" action="{{ route('tasks.store') }}" class="taskflow-task-form-body">
+D:\laravel\taskflow\resources\views\tasks\create.blade.php:249: <a href="{{ route('tasks.index') }}" class="taskflow-task-form-cancel">
+D:\laravel\taskflow\resources\views\tasks\edit.blade.php:31: href="{{ route('tasks.show', $task) }}"
+D:\laravel\taskflow\resources\views\tasks\edit.blade.php:74: action="{{ route('tasks.update', $task) }}"
+D:\laravel\taskflow\resources\views\tasks\edit.blade.php:405: href="{{ route('tasks.show', $task) }}"
+D:\laravel\taskflow\resources\views\tasks\index.blade.php:82: <a href="{{ route(app()->getLocale() . '.tasks.create') }}" class="taskflow-tasks-create-btn">
+D:\laravel\taskflow\resources\views\tasks\index.blade.php:400: <a href="{{ route('tasks.show', $task) }}" class="taskflow-task-view-btn">
+D:\laravel\taskflow\resources\views\tasks\index.blade.php:412: <a href="{{ route('tasks.edit', $task) }}" class="taskflow-task-icon-btn"
+D:\laravel\taskflow\resources\views\tasks\index.blade.php:420: <form method="POST" action="{{ route('tasks.destroy', $task) }}"
+D:\laravel\taskflow\resources\views\tasks\index.blade.php:490: <a href="{{ route('tasks.create') }}" class="taskflow-tasks-empty-btn">
+D:\laravel\taskflow\resources\views\tasks\show.blade.php:10: <a href="{{ route('tasks.index') }}" class="taskflow-task-back">
+D:\laravel\taskflow\resources\views\tasks\show.blade.php:40: <a href="{{ route('tasks.edit', $task) }}" class="taskflow-task-action-btn">
+D:\laravel\taskflow\resources\views\tasks\show.blade.php:47: <form method="POST" action="{{ route('tasks.destroy', $task) }}"
+D:\laravel\taskflow\resources\views\tasks\show.blade.php:236: <a href="{{ route('projects.show', $task->project) }}" class="taskflow-task-project-link">
+D:\laravel\taskflow\resources\views\users\create.blade.php:9: <a href="{{ route('users.index') }}" class="taskflow-user-back">
+D:\laravel\taskflow\resources\views\users\create.blade.php:51: <form method="POST" action="{{ route('users.store') }}">
+D:\laravel\taskflow\resources\views\users\create.blade.php:192: <a href="{{ route('users.index') }}" class="taskflow-user-cancel">
+D:\laravel\taskflow\resources\views\users\edit.blade.php:5: <a href="{{ route('users.show', $user->id) }}" class="taskflow-user-edit-back">
+D:\laravel\taskflow\resources\views\users\edit.blade.php:45: <form method="POST" action="{{ route('users.update', $user->id) }}">
+D:\laravel\taskflow\resources\views\users\edit.blade.php:187: <a href="{{ route('users.show', $user->id) }}" class="taskflow-user-edit-cancel">
+D:\laravel\taskflow\resources\views\users\index.blade.php:38: <a href="{{ route('users.create') }}" class="taskflow-users-add-btn">
+D:\laravel\taskflow\resources\views\users\index.blade.php:95: <a href="{{ route('users.show', $user) }}"
+D:\laravel\taskflow\resources\views\users\index.blade.php:100: <a href="{{ route('users.edit', $user) }}"
+D:\laravel\taskflow\resources\views\users\index.blade.php:105: <form action="{{ route('users.destroy', $user) }}" method="POST"
+D:\laravel\taskflow\resources\views\users\show.blade.php:7: <a href="{{ route('users.index') }}" class="taskflow-user-show-back">
+D:\laravel\taskflow\resources\views\users\show.blade.php:41: <a href="{{ route('users.edit', $user) }}" class="taskflow-user-show-edit">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:48: <a href="{{ route(app()->getLocale() . '.projects.create') }}" class="taskflow-dashboard-primary-btn">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:56: <a href="{{ route(app()->getLocale() . '.tasks.create') }}" class="taskflow-dashboard-secondary-btn">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:256: <a href="{{ route(app()->getLocale() . '.projects.index') }}" class="taskflow-action-item">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:274: <a href="{{ route(app()->getLocale() . '.tasks.index') }}" class="taskflow-action-item">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:292: <a href="{{ route(app()->getLocale() . '.profile.edit') }}" class="taskflow-action-item">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:332: <a href="{{ route(app()->getLocale() . '.projects.index') }}" class="taskflow-view-all">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:349: <a href="{{ route(app()->getLocale() . '.projects.show', $project->id) }}" class="taskflow-list-item">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:429: <a href="{{ route(app()->getLocale() . '.tasks.index') }}" class="taskflow-view-all">
+D:\laravel\taskflow\resources\views\dashboard.blade.php:461: <a href="{{ route(app()->getLocale() . '.tasks.show', $task->id) }}" class="taskflow-list-item">
+D:\laravel\taskflow\resources\views\welcome.blade.php:2985: <a href="{{ route('dashboard') }}" class="taskflow-nav-link taskflow-nav-dashboard">
+D:\laravel\taskflow\resources\views\welcome.blade.php:2991: <a href="{{ route(app()->getLocale() . '.login') }}" class="taskflow-nav-link taskflow-nav-login">
+D:\laravel\taskflow\resources\views\welcome.blade.php:2995: <a href="{{ route(app()->getLocale() . '.register') }}" class="taskflow-nav-link taskflow-nav-cta">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3027: <a href="{{ route('dashboard') }}">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3031: <a href="{{ route(app()->getLocale() . '.login') }}">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3035: <a href="{{ route(app()->getLocale() . '.register') }}">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3085: <a href="{{ route('dashboard') }}" class="taskflow-primary-btn">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3095: <a href="{{ route(app()->getLocale() . '.register') }}" class="taskflow-primary-btn">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3602: <a href="{{ route('dashboard') }}" class="taskflow-primary-btn">
+D:\laravel\taskflow\resources\views\welcome.blade.php:3607: <a href="{{ route(app()->getLocale() . '.register') }}" class="taskflow-primary-btn">

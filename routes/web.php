@@ -44,5 +44,28 @@ Route::group(
 
         require __DIR__ . '/auth.php';
     });
+ 
+// Localized authentication routes for English and Arabic.
+foreach (['en', 'ar'] as $locale) {
+    Route::prefix($locale)
+        ->name($locale . '.')
+        ->middleware([
+            'localeSessionRedirect',
+            'localizationRedirect',
+            'localeViewPath',
+        ])
+        ->group(function () use ($locale) {
+            Route::middleware('guest')->group(function () use ($locale) {
+                Route::get('register', [\App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])
+                    ->name('register');
+                Route::post('register', [\App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])
+                    ->name('register.store');
 
+                Route::get('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])
+                    ->name('login');
+                Route::post('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store'])
+                    ->name('login.store');
+            });
+        });
+}
     
